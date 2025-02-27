@@ -1,0 +1,584 @@
+= Pflichtenheft
+:toc:
+:toc-title: Inhaltsverzeichnis
+:toclevels: 3
+
+
+== Zusammenfassung
+
+
+Dieses Pflichtenheft beschreibt die Entwicklung einer WebApp, die darauf abzielt, verschiedene Aspekte des Familienlebens zu organisieren und zu verwalten. Die App soll als zentrales digitales Hilfsmittel für Familien dienen, um alltägliche Aufgaben zu erleichtern und wichtige Informationen zu erfassen.
+Kernfunktionen der WebApp umfassen:
+
+1. *Haushaltsbuch*: Ermöglicht die Erfassung und Verwaltung von Einnahmen und Ausgaben, um die finanzielle Situation der Familie im Blick zu behalten.
+
+2. *Digitales Tagebuch*: Bietet Familienmitgliedern die Möglichkeit, persönliche Einträge zu erstellen und Erinnerungen festzuhalten.
+
+3. *Babytabellen*: Spezielle Funktionen zur Dokumentation der Entwicklung und Pflege von Kleinkindern, wie Wachstum, Fütterungszeiten oder Schlafrhythmus.
+
+4. *Familienkalender mit Terminübersicht*: Ein gemeinsamer Kalender zur Koordination von Familienaktivitäten, schulischen Verpflichtungen und anderen wichtigen Terminen.
+
+5. *Digitale Pinwand für Meilensteine*: Ein Bereich, um besondere Ereignisse und Errungenschaften der Familienmitglieder festzuhalten und zu feiern.
+
+Die WebApp soll benutzerfreundlich, sicher und flexibel genug sein, um den unterschiedlichen Bedürfnissen verschiedener Familienkonstellationen gerecht zu werden. Ziel ist es, die Kommunikation und Organisation innerhalb der Familie zu verbessern und gleichzeitig eine digitale Plattform zu schaffen, die es ermöglicht, wichtige Momente und Informationen für die Zukunft zu bewahren.
+
+== Zielsetzung
+
+Das Hauptziel der Familien-WebApp ist es, Familien ein umfassendes digitales Werkzeug zur Verfügung zu stellen, das ihren Alltag erleichtert, die Kommunikation verbessert und wichtige Informationen zentral verwaltet.
+
+== Nutzung
+=== Benutzer der App
+
+- *Familienmitglieder*: Eltern, Kinder (ab einem gewissen Alter)
+
+
+=== Verfügbarkeit der App
+
+- *24/7 Zugriff*: Die App ist rund um die Uhr verfügbar
+
+
+=== Optimierung für Browser
+
+Responsive Design: Optimiert für verschiedene Bildschirmgrößen (Desktop, Tablet, Smartphone)
+
+Browser-Kompatibilität: Unterstützung aller gängigen Browser (Chrome, Firefox, Safari, Edge)
+
+Progressive Web App (PWA): Ermöglicht die Installation als App auf mobilen Geräten
+
+=== Primäre Nutzergruppe
+
+- *Kernfamilien*: Eltern mit Kindern im Alter von 0-18 Jahren
+
+- *Fokus auf digitale Affinität*: Nutzer, die technikaffin sind und den Wert digitaler Organisationstools schätzen
+
+- *Altersgruppe*: Hauptsächlich Erwachsene 
+
+=== Wartung und Betrieb der Website
+
+- *Regelmäßige Updates*: Sicherheitsupdates und Funktionserweiterungen je nach Bedarf
+
+
+- *Backup*:  Backups aller Nutzerdaten je nach Bedarf
+
+
+=== Daten
+
+- *Datenspeicherung*: persistierung der Daten durch nutzen einer Datenbank
+
+- *Datensicherheit*: Implementierung von Best Practices für Datensicherheit, einschließlich Verschlüsselung und sicherer Authentifizierung
+
+=== Nutzungsszenarien
+
+- *Tägliche Nutzung*: Eintragen von Terminen, Aktualisierung des Haushaltsbuchs
+
+- *Wöchentliche Nutzung*: Planung der kommenden Woche, Überprüfung von Meilensteinen
+
+- *Monatliche Nutzung*: Finanzübersicht, Anpassung langfristiger Ziele
+
+- *Anlassbezogene Nutzung*: Dokumentation besonderer Ereignisse, Aktualisierung von Babytabellen
+
+=== Nutzungskontexte
+
+- *Zuhause*: Hauptsächlich über Desktop oder Tablet
+
+- *Unterwegs*: Über Smartphones für schnelle Eingaben oder Überprüfungen
+
+- *Gemeinsame Nutzung*: Familienmitglieder können gleichzeitig auf verschiedene Bereiche zugreifen
+
+Diese Produktnutzung berücksichtigt die verschiedenen Aspekte der Nutzung Ihrer Familien-WebApp und bietet einen umfassenden Überblick über die erwartete Anwendung und die technischen Rahmenbedingungen.
+
+== Interessengruppen
+
+=== Primäre Interessengruppen
+1. Familienmitglieder
+  - Eltern
+    - Interesse: Effiziente Familienorganisation, Finanzübersicht, Terminkoordination
+
+2. Entwickler
+  - Team Tobi
+  - Interesse: Technische Umsetzung, Wartung und Weiterentwicklung der App, Lernen von Webtechnologien
+== Systemgrenze und Top-Level-Architektur
+
+=== Kontextdiagramm
+
+add a diagramm here
+
+//add a contextdiagramm here , its in the same drectory as this file
+image::diagrams/contextdiagramm.svg[static, 100%]
+
+=== Top-Level-Architektur
+image::diagrams/toplevel.svg[static, 100%]
+== Anwendungsfälle
+=== Akteure
+=== Überblick Anwendungsfalldiagramm
+=== Anwendungsfallbeschreibung
+
+=== Akteure
+
+Uneingeloggte Nutzer
+
+=== Überblick Anwendungsfalldiagramm
+
+image::diagrams/authUseCase.svg[static, 100%]
+
+=== Anwendungsfallbeschreibung
+
+Nutzer sind auf der Anmeldeseite und können sich anmelden. Bei Erfolg soll eine Weiterleitung auf die Startseite erfolgen. Bei Nichterfolg erfolgt eine Zurückleitung mit eventueller Fehlermeldung. Logouts erfolgen automatisch beim verlassen der Seite und beim drücken eines Logout Buttons.
+
+=== Akteure
+
+Ein eingeloggter Admin.
+
+=== Überblick Anwendungsfalldiagramm
+
+image::diagrams/usersUseCase.svg[static, 100%]
+
+=== Anwendungsfallbeschreibung
+
+Eine simple CRUD Anwendung für die Nutzerverwaltung.
+
+=== Akteure
+
+Ein eingeloggter Nutzer.
+
+=== Überblick Anwendungsfalldiagramm
+
+image::diagrams/BookkeepingUseCase.svg[static, 100%]
+
+=== Anwendungsfallbeschreibung
+
+
+
+
+=== Restliche Anwendungsfallbeschreibungen
+
+=== Überblick Anwendungsfalldiagramm
+
+image::diagrams/otherUseCases.svg[static, 100% ]
+
+siehe Diagramm
+
+== Funktionale Anforderungen
+=== Muss-Kriterien
+
+==== 1. Benutzerverwaltung und Authentifizierung
+
+ * Sichere Benutzerregistrierung und -anmeldung
+ * Anmeldung mit E-Mail und Passwort
+ * Ausloggen-Funktion
+ * Unterstützung verschiedener Benutzerrollen (z.B. Admin, Elternteil, Kind)
+
+==== 2. Haushaltsbuch
+
+ * Erfassung von Einnahmen und Ausgaben
+ * Übersicht über die finanzielle Situation der Familie
+ * Zuordnung von Transaktionen zu Kategorien
+ * Erstellung von Finanzberichten
+
+==== 3. Digitales Tagebuch
+
+ * Erstellung, Bearbeitung und Löschung persönlicher Einträge
+ * Gewährleistung der Privatsphäre der Einträge
+ * Übersicht aller eigenen Tagebucheinträge
+
+==== 4. Babytabellen
+
+ * Erfassung von Wachstumsdaten (Größe, Gewicht)
+ * Dokumentation von Fütterungszeiten und -mengen
+ * Erfassung des Schlafrhythmus des Babys
+ * Notierung von Entwicklungsfortschritten
+
+==== 5. Familienkalender
+
+ * Hinzufügen, Bearbeiten und Löschen von Terminen
+ * Übersicht aller Familientermine
+ * Erstellung wiederkehrender Termine
+ * Benachrichtigungen für bevorstehende Termine
+
+==== 6. Digitale Pinwand für Meilensteine
+
+ * Festhalten wichtiger Familienereignisse und Errungenschaften
+ * Übersichtliche Darstellung aller Meilensteine
+ * Versehen von Meilensteinen mit Datum, Beschreibung und optionalem Bild
+
+==== 7. Datensicherheit und -schutz
+
+ * Verschlüsselte Speicherung aller Benutzerdaten
+ * Regelmäßige Backups aller Daten
+ * Einhaltung der DSGVO-Anforderungen
+
+=== Kann-Kriterien
+
+==== 1. Erweiterte Authentifizierung
+
+ * Zwei-Faktor-Authentifizierung
+ * Anmeldung mit Social-Media-Konten
+
+==== 2. Erweitertes Haushaltsbuch
+
+ * Automatische Kategorisierung von Transaktionen
+ * Budgetierungsfunktionen mit Warnungen bei Überschreitung
+ * Prognosen für zukünftige Ausgaben
+
+==== 3. Erweitertes digitales Tagebuch
+
+ * Ergänzung von Einträgen mit Fotos, Videos oder Audiodateien
+ * Suchfunktion für Tagebucheinträge
+ * Teilen bestimmter Einträge mit anderen Familienmitgliedern
+
+==== 4. Erweiterte Babytabellen
+
+ * Generierung von Wachstumskurven und Entwicklungsdiagrammen
+ * Erinnerungen für anstehende Vorsorgeuntersuchungen oder Impfungen
+ * Empfehlungen für altersgerechte Aktivitäten oder Ernährung
+
+==== 5. Erweiterter Familienkalender
+
+ * Synchronisierung mit externen Kalendern
+ * Aufgabenzuweisung innerhalb der Familie
+ * Automatische Konflikterkennnung bei der Terminplanung
+
+==== 6. Erweiterte Meilenstein-Pinwand
+
+ * Teilen von Meilensteinen mit externen Kontakten
+ * Automatische Erinnerung an jährlich wiederkehrende Meilensteine
+ * Darstellung von Meilensteinen in einer Zeitleiste oder einem Fotoalbum
+
+==== 7. Zusätzliche Features
+
+ * Einkaufslisten-Funktion
+ * Integrierter Familienaufgabenplaner
+ * Chat-Funktion für die Familienkommunikation
+ * API für die Integration mit Smart-Home-Geräten oder anderen Tools
+
+== Nicht-Funktionale Anforderungen
+
+=== Qualitätsziele
+
+==== 1. Benutzerfreundlichkeit
+
+ * Intuitive Benutzeroberfläche für alle Altersgruppen
+ * Konsistentes Design über alle Funktionen hinweg
+ * Barrierefreiheit nach WCAG 2.1 Level AA
+
+==== 2. Leistung
+
+ * Schnelle Ladezeiten (< 3 Sekunden) für alle Hauptfunktionen
+ * Gleichzeitige Unterstützung von mindestens 1000 aktiven Benutzern
+
+==== 3. Zuverlässigkeit
+
+ * Verfügbarkeit von 99,9% (weniger als 9 Stunden Ausfallzeit pro Jahr)
+ * Automatische Fehlererkennung und -meldung
+
+==== 4. Sicherheit
+
+ * Verschlüsselung aller sensiblen Daten in Ruhe und während der Übertragung
+ * Regelmäßige Sicherheitsaudits und Penetrationstests
+
+==== 5. Wartbarkeit
+
+ * Modularer Code für einfache Erweiterbarkeit
+ * Umfassende Dokumentation des Codes und der Architektur
+
+=== Konkrete Nicht-Funktionale Anforderungen
+
+==== 1. Technische Anforderungen
+
+ * Responsive Design für verschiedene Bildschirmgrößen (Desktop, Tablet, Smartphone)
+ * Unterstützung gängiger Webbrowser (Chrome, Firefox, Safari, Edge) in den jeweils aktuellen und vorherigen Hauptversionen
+ * Implementierung als Progressive Web App (PWA) für Offline-Funktionalität
+
+==== 2. Datenschutz und Compliance
+
+ * Vollständige Einhaltung der DSGVO-Richtlinien
+ * Implementierung von "Privacy by Design" und "Privacy by Default" Prinzipien
+ * Transparente Datenschutzrichtlinien und einfache Möglichkeit für Benutzer, ihre Daten zu exportieren oder zu löschen
+
+==== 3. Skalierbarkeit
+
+ * Fähigkeit, mit steigender Benutzerzahl und Datenmenge umzugehen
+ * Möglichkeit zur horizontalen Skalierung der Serverinfrastruktur
+
+==== 4. Internationalisierung und Lokalisierung
+
+ * Unterstützung mehrerer Sprachen (mindestens Deutsch und Englisch)
+ * Anpassungsfähigkeit an verschiedene Datumsformate und Währungen
+
+==== 5. Backup und Wiederherstellung
+
+ * Tägliche automatische Backups aller Benutzerdaten
+ * Möglichkeit zur schnellen Wiederherstellung im Falle eines Datenverlusts (Recovery Time Objective < 4 Stunden)
+
+==== 6. Usability und User Experience
+
+ * Durchführung von Usability-Tests mit repräsentativen Benutzergruppen
+ * Maximale Anzahl von Klicks bis zur gewünschten Funktion: 3
+
+==== 7. Performance
+
+ * Maximale Antwortzeit des Servers bei 95% der Anfragen: < 500ms
+ * Datenbankabfragen sollen in 90% der Fälle unter 100ms bleiben
+
+==== 8. Wartung und Support
+
+ * Bereitstellung eines Support-Systems mit einer maximalen Reaktionszeit von 24 Stunden für kritische Probleme
+ * Regelmäßige Updates und Wartungsfenster (mindestens einmal pro Monat)
+
+==== 9. Dokumentation
+
+ * Erstellung einer umfassenden Benutzerdokumentation
+ * Bereitstellung von Video-Tutorials für die Hauptfunktionen der App
+
+==== 10. Ökologische Nachhaltigkeit
+
+ * Optimierung des Energieverbrauchs der Serverinfrastruktur
+ * Verwendung von umweltfreundlichen Hosting-Anbietern
+
+== GUI-Prototyp
+=== Überblick Dialoglandkarte
+
+image::diagrams/dialogMap.svg[static, 100%]
+
+=== Dialogbeschreibung
+==== 1. Startseite
+
+Zweck: Zentraler Einstiegspunkt für alle Hauptfunktionen der App
+
+Elemente:
+
+* Übersichtliches Dashboard mit Kacheln für jede Hauptfunktion
+* Schnellzugriff auf kürzlich verwendete Funktionen
+* Benachrichtigungsbereich für wichtige Ereignisse oder Erinnerungen
+
+image::diagrams/wireframe.svg[static, 100%]
+
+==== 2. Haushaltsbuch
+
+Zweck: Verwaltung der Familienfinanzen
+
+Elemente:
+
+* Formular zur Erfassung von Einnahmen und Ausgaben
+* Grafische Darstellung der finanziellen Situation (z.B. Balken- oder Kreisdiagramme)
+* Filtermöglichkeiten nach Kategorien und Zeiträumen
+* Bereich für die Erstellung und Anzeige von Finanzberichten
+
+image::diagrams/bookkeeping.svg[static, 100%]
+
+==== 3. Digitales Tagebuch
+
+Zweck: Persönliche Einträge und Erinnerungen festhalten
+
+Elemente:
+
+* Eingabefeld für neue Einträge mit Formatierungsoptionen
+* Kalenderansicht zur Navigation durch vergangene Einträge
+* Suchfunktion für Einträge
+* Privatsphäre-Einstellungen für jeden Eintrag
+
+image::diagrams/diary.svg[static, 100%]
+
+==== 4. Babytabellen
+
+Zweck: Dokumentation der Babyentwicklung und -pflege
+
+Elemente:
+
+* Eingabemasken für Wachstum, Fütterung und Schlaf
+* Grafische Darstellung von Wachstumskurven
+* Tagesübersicht für Fütterungs- und Schlafzeiten
+* Notizfeld für besondere Entwicklungsschritte oder Beobachtungen
+
+image::diagrams/babytable.svg[static, 100%]
+
+==== 5. Familienkalender
+
+Zweck: Gemeinsame Terminverwaltung für die Familie
+
+Elemente:
+
+* Monats-, Wochen- und Tagesansicht des Kalenders
+* Formular zum Hinzufügen und Bearbeiten von Terminen
+* Farbcodierung für verschiedene Familienmitglieder oder Terminarten
+* Erinnerungsfunktion mit anpassbaren Benachrichtigungen
+
+image::diagrams/calendar.svg[static, 100%]
+
+==== 6. Meilenstein-Pinwand
+
+Zweck: Festhalten und Feiern wichtiger Familienereignisse
+
+Elemente:
+
+* Pinnwand-ähnliche Darstellung der Meilensteine
+* Formular zum Hinzufügen neuer Meilensteine mit Bild-Upload-Möglichkeit
+* Filteroptionen (z.B. nach Familienmitglied oder Datum)
+* Teilen-Funktion für ausgewählte Meilensteine
+
+image::diagrams/milestone.svg[static, 100%]
+
+==== 7. Einstellungen
+
+Zweck: Anpassung der App an individuelle Bedürfnisse
+
+Elemente:
+
+* Benutzerprofil-Verwaltung
+* Benachrichtigungseinstellungen
+* Datenschutz- und Sicherheitsoptionen
+* Spracheinstellungen und andere App-weite Konfigurationen
+
+image::diagrams/settings.svg[static, 100%]
+
+=== Designprinzipien
+
+* Konsistentes Farbschema und Iconografie über alle Bereiche hinweg
+* Responsive Design für optimale Darstellung auf verschiedenen Geräten
+* Intuitive Navigation mit maximal drei Klicks zu jeder Hauptfunktion
+* Barrierefreie Gestaltung nach WCAG 2.1 Richtlinien
+* Klare visuelle Hierarchie und Gruppierung zusammengehöriger Elemente
+
+== Datenmodell
+=== Überblick Klassendiagramme
+
+image::diagrams/Classdiagramm.png[static, 100%]
+
+=== Klassen und Enumerationen
+
+== Akzeptanztestfälle
+
+=== 1. Haushaltsbuch
+
+=== Testfall 1.1: Erfassung einer neuen Ausgabe
+*Vorbedingung:* Benutzer ist eingeloggt und befindet sich im Haushaltsbuch-Bereich
+
+*Aktion:* 
+
+1. Klickt auf "Neue Ausgabe"
+2. Füllt das Formular aus:
+   * Betrag: 50,00 €
+   * Kategorie: Lebensmittel
+   * Datum: Heute
+   * Beschreibung: "Wocheneinkauf"
+3. Klickt auf "Speichern"
+
+*Erwartetes Ergebnis:* 
+
+* Die neue Ausgabe erscheint in der Liste der Transaktionen
+* Der Gesamtbetrag der Ausgaben wird entsprechend aktualisiert
+
+=== Testfall 1.2: Erstellung eines Monatsberichts
+*Vorbedingung:* Benutzer ist eingeloggt und im Haushaltsbuch-Bereich
+
+*Aktion:*
+
+1. Wählt "Bericht erstellen"
+2. Wählt den letzten Monat als Zeitraum
+3. Klickt auf "Bericht generieren"
+
+*Erwartetes Ergebnis:*
+
+* Ein Bericht wird erstellt und angezeigt
+* Der Bericht enthält eine Übersicht der Einnahmen und Ausgaben nach Kategorien
+* Eine Gesamtbilanz für den Monat wird angezeigt
+
+=== 2. Digitales Tagebuch
+
+=== Testfall 2.1: Erstellung eines neuen Tagebucheintrags
+*Vorbedingung:* Benutzer ist eingeloggt und im Tagebuch-Bereich
+
+*Aktion:*
+
+1. Klickt auf "Neuer Eintrag"
+2. Gibt einen Titel ein: "Mein erster Schultag"
+3. Schreibt einen Text von mindestens 100 Wörtern
+4. Wählt die Privatsphäre-Einstellung "Nur für mich"
+5. Klickt auf "Speichern"
+
+*Erwartetes Ergebnis:*
+
+* Der neue Eintrag erscheint in der Liste der Tagebucheinträge
+* Der Eintrag ist nur für den erstellenden Benutzer sichtbar
+
+=== 3. Babytabellen
+
+=== Testfall 3.1: Eintragen einer neuen Gewichtsmessung
+*Vorbedingung:* Benutzer ist eingeloggt und im Babytabellen-Bereich
+
+*Aktion:*
+
+1. Wählt "Neue Messung" aus
+2. Wählt "Gewicht" als Messungstyp
+3. Gibt 3,5 kg als Gewicht ein
+4. Wählt das heutige Datum
+5. Klickt auf "Speichern"
+
+*Erwartetes Ergebnis:*
+
+* Die neue Messung erscheint in der Gewichtstabelle
+* Die Wachstumskurve wird entsprechend aktualisiert
+
+=== 4. Familienkalender
+
+=== Testfall 4.1: Hinzufügen eines neuen Termins
+*Vorbedingung:* Benutzer ist eingeloggt und im Kalender-Bereich
+
+*Aktion:*
+
+1. Klickt auf "Neuer Termin"
+2. Füllt das Formular aus:
+   * Titel: "Zahnarzttermin Emma"
+   * Datum: Nächster Montag, 15:00 Uhr
+   * Dauer: 1 Stunde
+   * Kategorie: Gesundheit
+3. Aktiviert Erinnerung: 1 Tag vorher
+4. Klickt auf "Speichern"
+
+*Erwartetes Ergebnis:*
+
+* Der neue Termin erscheint im Kalender
+* Eine Erinnerung wird für einen Tag vor dem Termin eingerichtet
+
+=== 5. Meilenstein-Pinwand
+
+=== Testfall 5.1: Erstellen eines neuen Meilensteins
+*Vorbedingung:* Benutzer ist eingeloggt und im Meilenstein-Bereich
+
+*Aktion:*
+
+1. Klickt auf "Neuer Meilenstein"
+2. Füllt das Formular aus:
+   * Titel: "Emmas erster Schultag"
+   * Datum: 01.09.2024
+   * Beschreibung: "Emma hat ihren ersten Tag in der Grundschule"
+3. Lädt ein Bild hoch
+4. Wählt die Kategorie "Schule"
+5. Klickt auf "Speichern"
+
+*Erwartetes Ergebnis:*
+
+* Der neue Meilenstein erscheint auf der Pinwand
+* Das hochgeladene Bild wird korrekt angezeigt
+
+=== 6. Einstellungen
+
+=== Testfall 6.1: Ändern der Benachrichtigungseinstellungen
+*Vorbedingung:* Benutzer ist eingeloggt und im Einstellungsbereich
+
+*Aktion:*
+
+1. Navigiert zu "Benachrichtigungen"
+2. Aktiviert E-Mail-Benachrichtigungen für neue Familienkalendereinträge
+3. Deaktiviert Push-Benachrichtigungen für das Haushaltsbuch
+4. Klickt auf "Speichern"
+
+*Erwartetes Ergebnis:*
+
+* Die Änderungen werden gespeichert
+* Bei einem neuen Kalendereintrag wird eine E-Mail gesendet
+* Keine Push-Benachrichtigungen für Haushaltsbuch-Aktivitäten werden mehr gesendet
+
+== Glossar
+
+== Offene Punkte
